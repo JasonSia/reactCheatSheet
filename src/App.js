@@ -3,6 +3,7 @@ import './resource/App.css'
 import ChildComponentA from './components/ChildComponentA';
 import ChildComponentB from "./components/ChildComponentB";
 import ChildComponentC from "./components/ChildComponentC";
+import ChildComponentD from "./components/ChildComponentD";
 
 class App extends Component {
 
@@ -10,7 +11,9 @@ class App extends Component {
         super();
         this.state={
           currentPage: 1,
-            childCVisible:true
+            childCVisible:true,
+            childDVisible:true,
+            componentDText: ''
         };
     }
 
@@ -18,8 +21,16 @@ class App extends Component {
         this.setState({currentPage: page })
     }
 
+    dSetText(text){
+        this.setState({text:text})
+    }
+
     toggleChildC(){
         this.setState({childCVisible: this.state.childCVisible ? false : true })
+    }
+
+    toggleChildD(){
+        this.setState({childDVisible: this.state.childDVisible ? false : true })
     }
 
     getPage(page){
@@ -52,13 +63,16 @@ class App extends Component {
           Current Parent Value: {this.state.currentPage}
           <button href="#" onClick = {this.clicked.bind(this)}>Local ++</button>
           <button href="#" onClick = {this.toggleChildC.bind(this)}>Toggle Child C</button>
+          <button href="#" onClick = {this.toggleChildD.bind(this)}>Toggle Child D</button>
           <hr/>
 
           {this.getPage(this.state.currentPage)}
           <hr/>
 
-          {this.state.childCVisible? <ChildComponentC identity="C1"/> : '' }
+          {this.state.childCVisible ? <ChildComponentC identity="C1"/> : '' }
 
+          <hr/>
+          {this.state.childDVisible ? <ChildComponentD identity="D1" text={this.state.text} setText={this.dSetText.bind(this)} /> : '' }
 
           <div className="main-footer">
 
