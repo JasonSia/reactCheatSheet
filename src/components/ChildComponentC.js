@@ -26,9 +26,9 @@ export default class ChildComponentC extends Component {
         let myStyle = {color:'red'};
 
         return <div style={myStyle}>
-            <h1>
+            <h4>
                 Child Component <br/>
-                Identity is: {identity}</h1>
+                Identity is: {identity}</h4>
 
             <h4>local child value: {this.state.localChildCValue}</h4>
             <button onClick = {this.incrementLocalChildValue.bind(this)}>increment child value</button>

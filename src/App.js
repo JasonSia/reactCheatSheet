@@ -51,7 +51,7 @@ class App extends Component {
           <h1>Parent Component</h1>
           Current Parent Value: {this.state.currentPage}
           <button href="#" onClick = {this.clicked.bind(this)}>Local ++</button>
-          <button href="" onClick = {this.toggleChildC.bind(this)}>Toggle Child C</button>
+          <button href="#" onClick = {this.toggleChildC.bind(this)}>Toggle Child C</button>
           <hr/>
 
           {this.getPage(this.state.currentPage)}
@@ -64,7 +64,7 @@ class App extends Component {
 
               <p>
                   ***<br/>
-                  <br/>the purpose of this project is to demo the basic functions and usage in reactjs.
+                  <br/>the purpose of this project is to demo the basic functions and usage in purely reactjs.
                   <br/>these functionalities includes:
                   <ul>
                       <li>React Component</li>

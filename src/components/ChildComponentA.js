@@ -25,9 +25,9 @@ export default class ChildComponentA extends Component {
         let myStyle = {color:'blue'};
 
         return <div style={myStyle}>
-            <h1>
+            <h4>
                 Child Component <br/>
-                Identity is: {identity}</h1>
+                Identity is: {identity}</h4>
 
             <button onClick = {()=>goToPageFunction(1)}>Component Jump to A1 </button>
             <button onClick = {()=>goToPageFunction(2)}>Component Jump to A2 </button>
